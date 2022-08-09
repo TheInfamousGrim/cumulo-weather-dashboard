@@ -36,16 +36,228 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Cumulo Weather Dashboard</title>
   </head>
   <body>
-    <div class="app-title-container">
-      <h1>Cumulo Weather Dashboard</h1>
+    <div class="app-title-container center-align">
+      <h1 class="cumulo-title">Cumulo Weather Dashboard</h1>
+    </div>
+    <div class="app-container container row">
+      <div class="city-selector-container col s4">
+        <form class="search-city-form col s12 card orange accent-4">
+          <div class="search-city-row row">
+            <h3 class="search-city-input-title col s10">Search for a city</h3>
+          </div>
+          <div class="row">
+            <div class="input-field col s10">
+              <input placeholder="City" type="text" class="validate" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn waves-effect waves-light">
+                Search<i class="material-icons right">search</i>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="search-history-cities-container">
+          <div class="card col s12">
+            <ul class="collection col s12">
+              <li class="collection-item">
+                <button
+                  type="button"
+                  class="waves-effect waves-light btn-small"
+                >
+                  Birmingham
+                </button>
+              </li>
+              <li class="collection-item">
+                <button
+                  type="button"
+                  class="waves-effect waves-light btn-small"
+                >
+                  London
+                </button>
+              </li>
+              <li class="collection-item">
+                <button
+                  type="button"
+                  class="waves-effect waves-light btn-small"
+                >
+                  Brighton
+                </button>
+              </li>
+              <li class="collection-item">
+                <button
+                  type="button"
+                  class="waves-effect waves-light btn-small"
+                >
+                  Manchester
+                </button>
+              </li>
+              <li class="collection-item">
+                <button
+                  type="button"
+                  class="waves-effect waves-light btn-small"
+                >
+                  Liverpool
+                </button>
+              </li>
+              <li class="collection-item">
+                <button
+                  type="button"
+                  class="waves-effect waves-light btn-small"
+                >
+                  Bristol
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="forecast-container col s8">
+        <div class="today-forecast-container row">
+          <div
+            class="today-forecast-card card col s12 orange accent-4"
+            id="today-forecast-id"
+          >
+            <h3 class="center-align">Todays Weather</h3>
+            <div class="current-city-time-container row center-align">
+              <h4 class="current-city col s6" id="currentCity">Birmingham</h4>
+              <h4 class="current-time col s6" id="currentTime">12:48</h4>
+            </div>
+            <div class="current-weather-icon-container center">
+              <i class="material-icons weather-icon-current">wb_sunny</i>
+            </div>
+            <p class="todays-temp-label">
+              <i class="material-icons left">thermostat</i>Temp:
+              <span id="currentTemp">17°C</span>
+            </p>
+            <p class="todays-wind-label">
+              <i class="material-icons left">air</i>Wind:
+              <span id="currentWind">6.67 MPH</span>
+            </p>
+            <p class="todays-humidity-label">
+              <i class="material-icons left">opacity</i>Humidity:
+              <span id="currentHumidity">48%</span>
+            </p>
+            <p class="todays-uv-index-label">
+              <i class="material-icons left">brightness_high</i>UV Index:
+              <span id="currentUV">0.47</span>
+            </p>
+          </div>
+        </div>
+        <div class="five-day-forecast-container row col s12">
+          <div class="five-title-container">
+            <h3 class="five-forecast-title card orange accent-4">
+              5 Day Forecast
+            </h3>
+          </div>
+          <div class="future-forecasts-cards-container">
+            <div class="day-1-forecast-card col s2 center">
+              <div
+                class="future-forecast-card day-1-content card col s12 orange accent-4"
+              >
+                <p class="day-1-name">Wednesday</p>
+                <i class="material-icons">wb_cloudy</i>
+                <p class="day-1-temp">
+                  <i class="material-icons left">thermostat</i> 27°C
+                </p>
+                <p class="day-1-wind">
+                  <i class="material-icons left">air</i> 7MPH
+                </p>
+                <p class="day-1-humidity">
+                  <i class="material-icons left">opacity</i>20%
+                </p>
+              </div>
+            </div>
+            <div class="day-2-forecast-card col s2 center">
+              <div
+                class="future-forecast-card day-1-content card orange accent-4 col s12"
+              >
+                <p class="day-1-name">Thursday</p>
+                <i class="material-icons">wb_cloudy</i>
+                <p class="day-1-temp">
+                  <i class="material-icons left">thermostat</i> 27°C
+                </p>
+                <p class="day-1-wind">
+                  <i class="material-icons left">air</i> 7MPH
+                </p>
+                <p class="day-1-humidity">
+                  <i class="material-icons left">opacity</i>20%
+                </p>
+              </div>
+            </div>
+            <div class="day-3-forecast-card col s2 center">
+              <div
+                class="future-forecast-card day-1-content card orange accent-4 col s12"
+              >
+                <p class="day-1-name">Friday</p>
+                <i class="material-icons">wb_cloudy</i>
+                <p class="day-1-temp">
+                  <i class="material-icons left">thermostat</i> 27°C
+                </p>
+                <p class="day-1-wind">
+                  <i class="material-icons left">air</i> 7MPH
+                </p>
+                <p class="day-1-humidity">
+                  <i class="material-icons left">opacity</i>20%
+                </p>
+              </div>
+            </div>
+            <div class="day-4-forecast-card col s2 center">
+              <div
+                class="future-forecast-card day-1-content card orange accent-4 col s12"
+              >
+                <p class="day-1-name">Saturday</p>
+                <i class="material-icons">wb_cloudy</i>
+                <p class="day-1-temp">
+                  <i class="material-icons left">thermostat</i> 27°C
+                </p>
+                <p class="day-1-wind">
+                  <i class="material-icons left">air</i> 7MPH
+                </p>
+                <p class="day-1-humidity">
+                  <i class="material-icons left">opacity</i>20%
+                </p>
+              </div>
+            </div>
+            <div class="day-5-forecast-card col s2 center">
+              <div
+                class="future-forecast-card day-1-content card orange accent-4 col s12"
+              >
+                <p class="day-1-name">Sunday</p>
+                <i class="material-icons">wb_cloudy</i>
+                <p class="day-1-temp">
+                  <i class="material-icons left">thermostat</i> 27°C
+                </p>
+                <p class="day-1-wind">
+                  <i class="material-icons left">air</i> 7MPH
+                </p>
+                <p class="day-1-humidity">
+                  <i class="material-icons left">opacity</i>20%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
       integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>

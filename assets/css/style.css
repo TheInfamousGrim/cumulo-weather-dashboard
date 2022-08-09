@@ -3,6 +3,16 @@
   /* button colors and stylings */
   --btn-not-pressed: grey;
   --btn-pressed: black;
+  --mikado-yellow: #ffc400;
+  --safety-Orange-Blaze: #ff6d00;
+  --flicker-pink: #f72585;
+  --byzantine: #b5179e;
+  --trypan-blue: #3a0ca3;
+  --persian-blue: #3f37c9;
+  --ultramarine-blue: #4361ee;
+  --dodger-blue: #4895ef;
+  --vivid-sky-blue: #4cc9f0;
+  --card-border-radius: 25px;
 }
 
 /* ---------------------------- general stylings ---------------------------- */
@@ -12,6 +22,7 @@ body {
   font-weight: 400;
   line-height: 1.75;
   color: #000000;
+  background-image: url(../imgs/bg-img-noaa-unsplash.jpg);
 }
 
 p {
@@ -23,7 +34,6 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 3rem 0 1.38rem;
   font-family: "Libre Franklin", sans-serif;
   line-height: 1.3;
 }
@@ -41,7 +51,7 @@ h2 {
 
 h3 {
   font-size: 1.953rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 h4 {
@@ -55,4 +65,154 @@ h5 {
 small,
 .text_small {
   font-size: 0.8rem;
+}
+
+::placeholder {
+  color: #505050;
+}
+
+/* ----------------------- general materialize resets ----------------------- */
+
+.container {
+  width: 100%;
+}
+
+button {
+  background-color: var(--byzantine) !important;
+}
+
+.card {
+  border-radius: var(--card-border-radius);
+}
+
+.collection {
+  border-radius: var(--card-border-radius);
+}
+
+/* ----------------------------- title settings ----------------------------- */
+
+.app-title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cumulo-title {
+  width: fit-content;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  border-radius: 50px;
+  /* Animated Background */
+  background: linear-gradient(
+    270deg,
+    #ffc400,
+    #ff6d00,
+    #f72585,
+    #b5179e,
+    #7209b7,
+    #560bad,
+    #480ca8
+  );
+  background-size: 400% 400%;
+  -webkit-animation: TitleBackgroundAnimation 30s ease infinite;
+  -moz-animation: TitleBackgroundAnimation 30s ease infinite;
+  -o-animation: TitleBackgroundAnimation 30s ease infinite;
+  animation: TitleBackgroundAnimation 30s ease infinite;
+}
+
+/* Keyframes for animated title background */
+@-webkit-keyframes TitleBackgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes TitleBackgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes TitleBackgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes TitleBackgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          search parameters column                          */
+/* -------------------------------------------------------------------------- */
+
+input[type="text"]:not(.browser-default) {
+  border-bottom-color: #505050;
+}
+
+input[type="text"]:focus {
+  border-bottom: 1px solid var(--byzantine) !important;
+  box-shadow: 0 1px 0 0 var(--byzantine) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              forecast section                              */
+/* -------------------------------------------------------------------------- */
+
+/* todays forecast width */
+.today-forecast-card {
+  width: fit-content !important;
+  padding: 0 4rem !important;
+  margin: auto 0 !important;
+}
+
+/* today forecast container */
+.today-forecast-container {
+  display: flex;
+  justify-content: center !important;
+}
+
+/* todays weather icon */
+.weather-icon-current {
+  font-size: 6rem;
+}
+
+.five-forecast-title {
+  width: fit-content;
+  padding: 1rem;
+}
+
+/* ------------------------ five day forecast section ----------------------- */
+
+.five-title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.future-forecasts-cards-container {
+  display: flex;
+  justify-content: center;
 }
