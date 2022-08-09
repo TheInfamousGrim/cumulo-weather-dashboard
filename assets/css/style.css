@@ -4,7 +4,7 @@
   --btn-not-pressed: grey;
   --btn-pressed: black;
   --mikado-yellow: #ffc400;
-  --safety-Orange-Blaze: #ff6d00;
+  --safety-Orange-Blaze: 255, 109, 0, 0.5;
   --flicker-pink: #f72585;
   --byzantine: #b5179e;
   --trypan-blue: #3a0ca3;
@@ -79,10 +79,15 @@ small,
 
 button {
   background-color: var(--byzantine) !important;
+  font-weight: 600;
 }
 
 .card {
   border-radius: var(--card-border-radius);
+}
+
+.general-cards {
+  background: rgba(var(--safety-Orange-Blaze)) !important;
 }
 
 .collection {
