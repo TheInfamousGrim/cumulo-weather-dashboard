@@ -4,7 +4,7 @@
   --btn-not-pressed: grey;
   --btn-pressed: black;
   --mikado-yellow: #ffc400;
-  --safety-Orange-Blaze: 255, 109, 0, 0.5;
+  --safety-Orange-Blaze: 37, 36, 34, 0.5;
   --flicker-pink: #f72585;
   --byzantine: #b5179e;
   --trypan-blue: #3a0ca3;
@@ -21,7 +21,7 @@ body {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 400;
   line-height: 1.75;
-  color: #000000;
+  color: #fffcf2;
   background-image: url(../imgs/bg-img-noaa-unsplash.jpg);
 }
 
@@ -68,7 +68,7 @@ small,
 }
 
 ::placeholder {
-  color: #505050;
+  color: #ccc5b9;
 }
 
 /* ----------------------- general materialize resets ----------------------- */
@@ -175,7 +175,7 @@ button {
 /* -------------------------------------------------------------------------- */
 
 input[type="text"]:not(.browser-default) {
-  border-bottom-color: #505050;
+  border-bottom-color: #ccc5b9;
 }
 
 input[type="text"]:focus {
@@ -200,7 +200,7 @@ input[type="text"]:focus {
   justify-content: center !important;
 }
 
-/* todays weather icon */
+/* current weather icon */
 .weather-icon-current {
   font-size: 6rem;
 }
@@ -249,6 +249,10 @@ input[type="text"]:focus {
 /* ------------------- Mobile devices and smaller tablets ------------------- */
 
 @media only screen and (max-width: 776px) {
+  .city-selector-container {
+    width: 90% !important;
+  }
+
   .future-forecasts-cards-container {
     margin: 0;
     flex-direction: column !important;

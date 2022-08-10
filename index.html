@@ -46,6 +46,23 @@
   <body>
     <div class="app-title-container center-align">
       <h1 class="cumulo-title">Cumulo Weather Dashboard</h1>
+      <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal1"
+        >Modal</a
+      >
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+            >Agree</a
+          >
+        </div>
+      </div>
     </div>
     <div class="app-container container row">
       <div class="city-selector-container col s4">
@@ -60,7 +77,10 @@
           </div>
           <div class="row">
             <div class="col">
-              <button class="btn waves-effect waves-light">
+              <button
+                class="search-city-btn btn waves-effect waves-light"
+                type="submit"
+              >
                 Search<i class="material-icons right">search</i>
               </button>
             </div>
@@ -129,23 +149,23 @@
           >
             <h3 class="center-align">Todays Weather</h3>
             <div class="current-city-time-container row center-align">
-              <h4 class="current-city col s6" id="currentCity">Birmingham</h4>
-              <h4 class="current-time col s6" id="currentTime">12:48</h4>
+              <h4 class="current-city row" id="currentCity">Birmingham</h4>
+              <h4 class="current-time row" id="currentTime">12:48</h4>
             </div>
             <div class="current-weather-icon-container center">
-              <i class="material-icons weather-icon-current">wb_sunny</i>
+              <img class="weather-icon-current"></img>
             </div>
             <p class="todays-temp-label">
               <i class="material-icons left">thermostat</i>Temp:
-              <span id="currentTemp">17°C</span>
+              <span id="currentTemp">17</span>°C
             </p>
             <p class="todays-wind-label">
               <i class="material-icons left">air</i>Wind:
-              <span id="currentWind">6.67 MPH</span>
+              <span id="currentWind">6.67 </span>MPH
             </p>
             <p class="todays-humidity-label">
               <i class="material-icons left">opacity</i>Humidity:
-              <span id="currentHumidity">48%</span>
+              <span id="currentHumidity">48</span>%
             </p>
             <p class="todays-uv-index-label">
               <i class="material-icons left">brightness_high</i>UV Index:
@@ -160,12 +180,14 @@
             </h3>
           </div>
           <div class="future-forecasts-cards-container">
-            <div class="forecast-container day-1-forecast-card col s2 center">
+            <div
+              class="future-forecast-container day-1-forecast-container col s2 center"
+            >
               <div
-                class="future-forecast-container day-1-content card col s12 general-cards"
+                class="future-forecast-card day-1-content card col s12 general-cards"
               >
                 <p class="day-1-name">Wednesday</p>
-                <i class="material-icons">wb_cloudy</i>
+                <i class="material-icons day-1-weather-icon">wb_cloudy</i>
                 <p class="day-1-temp">
                   <i class="material-icons left">thermostat</i> 27°C
                 </p>
@@ -178,13 +200,13 @@
               </div>
             </div>
             <div
-              class="forecast-container day-2-forecast-container col s2 center"
+              class="future-forecast-container day-2-forecast-container col s2 center"
             >
               <div
                 class="future-forecast-card day-2-content card general-cards col s12"
               >
                 <p class="day-2-name">Thursday</p>
-                <i class="material-icons">wb_cloudy</i>
+                <i class="material-icons day-2-weather-icon">wb_cloudy</i>
                 <p class="day-2-temp">
                   <i class="material-icons left">thermostat</i> 27°C
                 </p>
@@ -197,13 +219,13 @@
               </div>
             </div>
             <div
-              class="forecast-container day-3-forecast-container col s2 center"
+              class="future-forecast-container day-3-forecast-container col s2 center"
             >
               <div
                 class="future-forecast-card day-3-content card general-cards col s12"
               >
                 <p class="day-3-name">Friday</p>
-                <i class="material-icons">wb_cloudy</i>
+                <i class="material-icons day-3-weather-icon">wb_cloudy</i>
                 <p class="day-3-temp">
                   <i class="material-icons left">thermostat</i> 27°C
                 </p>
@@ -216,13 +238,13 @@
               </div>
             </div>
             <div
-              class="forecast-container day-4-forecast-container col s2 center"
+              class="future-forecast-container day-4-forecast-container col s2 center"
             >
               <div
                 class="future-forecast-card day-4-content card general-cards col s12"
               >
                 <p class="day-4-name">Saturday</p>
-                <i class="material-icons">wb_cloudy</i>
+                <i class="material-icons day-4-weather-icon">wb_cloudy</i>
                 <p class="day-4-temp">
                   <i class="material-icons left">thermostat</i>27°C
                 </p>
@@ -235,13 +257,13 @@
               </div>
             </div>
             <div
-              class="forecast-container day-5-forecast-container col s2 center"
+              class="future-forecast-container day-5-forecast-container col s2 center"
             >
               <div
                 class="future-forecast-card day-5-content card general-cards col s12"
               >
                 <p class="day-5-name">Sunday</p>
-                <i class="material-icons">wb_cloudy</i>
+                <i class="material-icons day-5-weather-icon">wb_cloudy</i>
                 <p class="day-5-temp">
                   <i class="material-icons left">thermostat</i> 27°C
                 </p>
