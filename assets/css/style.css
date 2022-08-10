@@ -4,7 +4,7 @@
   --btn-not-pressed: grey;
   --btn-pressed: black;
   --mikado-yellow: #ffc400;
-  --safety-Orange-Blaze: 37, 36, 34, 0.5;
+  --card-color: 37, 36, 34, 0.5;
   --flicker-pink: #f72585;
   --byzantine: #b5179e;
   --trypan-blue: #3a0ca3;
@@ -13,6 +13,10 @@
   --dodger-blue: #4895ef;
   --vivid-sky-blue: #4cc9f0;
   --card-border-radius: 25px;
+  /* UV Index Color Indicators */
+  --low-uv: #9dc600;
+  --moderate-uv: #fdba00;
+  --high-uv: #f35023;
 }
 
 /* ---------------------------- general stylings ---------------------------- */
@@ -87,7 +91,7 @@ button {
 }
 
 .general-cards {
-  background: rgba(var(--safety-Orange-Blaze)) !important;
+  background: rgba(var(--card-color)) !important;
 }
 
 .collection {
@@ -200,9 +204,23 @@ input[type="text"]:focus {
   justify-content: center !important;
 }
 
-/* current weather icon */
-.weather-icon-current {
-  font-size: 6rem;
+/* UV Index Severity classes */
+.uv-index-high {
+  padding: 0.5rem 0.5rem;
+  background-color: var(--high-uv);
+  border-radius: 50px;
+}
+
+.uv-index-moderate {
+  padding: 0.5rem 0.5rem;
+  background-color: var(--moderate-uv);
+  border-radius: 50px;
+}
+
+.uv-index-low {
+  padding: 0.5rem 0.5rem;
+  background-color: var(--low-uv);
+  border-radius: 50px;
 }
 
 .five-forecast-title {
