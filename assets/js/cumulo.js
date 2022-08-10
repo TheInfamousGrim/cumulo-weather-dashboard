@@ -12,7 +12,6 @@ const searchHistoryList = $('.collection');
 
 // Todays weather section
 const currentCityText = $('#currentCity');
-const currentTimeText = $('#currentTime');
 const currentWeatherIcon = $('.weather-icon-current');
 const currentTempText = $('#currentTemp');
 const currentWindText = $('#currentWind');
@@ -108,7 +107,6 @@ async function getWeather(latitude, longitude) {
     const openWeatherCurrResp = await fetch(weatherApiUrlCurr);
     // get the current weather data for the users location
     const currentWeatherData = await openWeatherCurrResp.json();
-    console.log(currentWeatherData);
     styleTodaysWeather(
         currentWeatherData.current.weather[0].icon,
         currentWeatherData.current.temp,
@@ -116,7 +114,6 @@ async function getWeather(latitude, longitude) {
         currentWeatherData.current.humidity,
         currentWeatherData.current.uvi
     );
-    console.log(currentWeatherData.daily);
     styleFutureWeather(currentWeatherData.daily);
 }
 
@@ -146,17 +143,89 @@ function getLocation() {
 
 getLocation();
 
-// Implement a search city function
+/* -------------------------------------------------------------------------- */
+/*         save search data to the local storage and display as a list        */
+/* -------------------------------------------------------------------------- */
 
+/* -------------------- Append the city to the list item -------------------- */
+function appendCityListItem(city) {
+    const cityHTML = `
+    <li class="collection-item">
+        <button
+            type="button"
+            class="waves-effect waves-light btn-small"
+        >
+            ${city}
+        </button>
+        <button type="button" class="delete-city-btn waves-effect waves-light btn"><i class="material-icons delete-icon">delete_outline</i></button>
+    </li>
+    `;
+    searchHistoryList.append(cityHTML);
+}
+
+/* ------ Save city to the local storage, append to search history list ----- */
+
+function saveCitySearch(city) {
+    // get the city search history
+    const citySearchData = JSON.parse(localStorage.getItem('citySearches')) || [];
+    // get the length of the array
+    const { length } = citySearchData;
+    // increment the id value in the object to be added
+    const id = length + 1;
+    // check if there's a city with the same name in the local storage
+    const found = citySearchData.some((el) => el.city_name === city);
+    // Add the city to the array if it's not found
+    if (!found) {
+        citySearchData.push({ id, city_name: city });
+        // Append the city to the search history list
+        appendCityListItem(city);
+    }
+
+    // Add the city to the local storage if it's not found
+    localStorage.setItem('citySearches', JSON.stringify(citySearchData));
+}
+
+/* ------------------- get and display city search history ------------------ */
+
+function getCitySearches() {
+    // get the city search data or an empty array
+    const citySearchData = JSON.parse(localStorage.getItem('citySearches')) || [];
+    // append to the list if it's not an empty array
+    if (citySearchData !== []) {
+        citySearchData.forEach((el) => {
+            appendCityListItem(el.city_name);
+        });
+    }
+}
+
+getCitySearches();
 /* ---------------------- search for your specific city --------------------- */
+
+// Geocoding API to get coordinates and
+async function getCityLatLong(cityName) {
+    const geocodingAPIUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit5=1&appid=${apiKey}`;
+    const LatLongResponse = await fetch(geocodingAPIUrl);
+    const LatLongData = await LatLongResponse.json();
+    // Create an abject to store the processed data
+    const searchResults = {
+        lat: LatLongData[0].lat,
+        long: LatLongData[0].lon,
+        name: LatLongData[0].name,
+    };
+    // style todays weather card city name
+    currentCityText.text(searchResults.name);
+    // style all the weather cards
+    getWeather(searchResults.lat, searchResults.long);
+    // add the searched city to the search history
+    saveCitySearch(cityName);
+}
 
 function handleCitySearch(e) {
     e.preventDefault();
-    console.log(e);
+    if (cityInput.val() !== '') {
+        const cityToSearch = cityInput.val();
+        getCityLatLong(cityToSearch);
+    }
 }
 
-console.log(searchCityForm);
-
-searchCityForm.addEventListener('submit', handleCitySearch);
-
-// Save search data to the local storage
+searchCityForm.on('submit', handleCitySearch);

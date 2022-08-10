@@ -1,8 +1,7 @@
 /* ----------------------------- root variables ----------------------------- */
 :root {
   /* button colors and stylings */
-  --btn-not-pressed: grey;
-  --btn-pressed: black;
+  --delete-btn: #ee6e73;
   --mikado-yellow: #ffc400;
   --card-color: 37, 36, 34, 0.5;
   --flicker-pink: #f72585;
@@ -188,6 +187,31 @@ input[type="text"]:focus {
 }
 
 /* -------------------------------------------------------------------------- */
+/*                           search history section                           */
+/* -------------------------------------------------------------------------- */
+
+/* space out the city btns and delete btn */
+.collection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-city-btn {
+  background-color: var(--delete-btn) !important;
+  transition: all 0.5s;
+}
+
+.delete-city-btn .delete-icon {
+  transition: all 0.5s;
+}
+
+.delete-city-btn:hover .delete-icon,
+.delete-city-btn:focus .delete-icon {
+  font-size: 2rem;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                              forecast section                              */
 /* -------------------------------------------------------------------------- */
 
@@ -223,6 +247,7 @@ input[type="text"]:focus {
   border-radius: 50px;
 }
 
+/* five day forecast title */
 .five-forecast-title {
   width: fit-content;
   padding: 1rem;
