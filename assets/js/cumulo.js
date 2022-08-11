@@ -22,16 +22,6 @@ const currentUVText = $('#currentUV');
 // Future weather section
 const futureForecastCards = document.querySelectorAll('.future-forecast-card');
 
-// Modal trigger
-document.addEventListener('DOMContentLoaded', () => {
-    const elems = document.querySelectorAll('.modal');
-    const instances = M.Modal.init(elems, {
-        opcaity: 0.5,
-        inDuration: 500,
-        outDuration: 250,
-    });
-});
-
 /* -------------------------------------------------------------------------- */
 /*                             formatting functions                           */
 /* -------------------------------------------------------------------------- */
@@ -270,13 +260,19 @@ getCitySearches();
 // Geocoding API to get coordinates and
 async function getCityLatLong(cityName) {
     const geocodingAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit5=1&appid=${apiKey}`;
-    const LatLongResponse = await fetch(geocodingAPIUrl);
-    const LatLongData = await LatLongResponse.json();
+    const latLongResponse = await fetch(geocodingAPIUrl);
+    const latLongData = await latLongResponse.json();
+    if (latLongData.length === 0) {
+        const cityNotFoundModal = $('#cityNotFoundModal');
+        const instance = M.Modal.getInstance(cityNotFoundModal);
+        instance.open();
+        return;
+    }
     // Create an abject to store the processed data
     const searchResults = {
-        lat: LatLongData[0].lat,
-        long: LatLongData[0].lon,
-        name: LatLongData[0].name,
+        lat: latLongData[0].lat,
+        long: latLongData[0].lon,
+        name: latLongData[0].name,
     };
     // style todays weather card city name
     currentCityText.text(searchResults.name);
