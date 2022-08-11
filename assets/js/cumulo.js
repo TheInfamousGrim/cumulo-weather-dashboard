@@ -253,7 +253,7 @@ getCitySearches();
 
 // Geocoding API to get coordinates and
 async function getCityLatLong(cityName) {
-    const geocodingAPIUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit5=1&appid=${apiKey}`;
+    const geocodingAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit5=1&appid=${apiKey}`;
     const LatLongResponse = await fetch(geocodingAPIUrl);
     const LatLongData = await LatLongResponse.json();
     // Create an abject to store the processed data
