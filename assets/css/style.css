@@ -178,6 +178,7 @@ button {
 /* -------------------------------------------------------------------------- */
 
 input[type="text"]:not(.browser-default) {
+  color: #ccc5b9;
   border-bottom-color: #ccc5b9;
 }
 

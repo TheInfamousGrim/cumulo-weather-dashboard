@@ -32,7 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* ------------ get the weather conditions for the users location ----------- */
+/* -------------------------------------------------------------------------- */
+/*                             formating functions                            */
+/* -------------------------------------------------------------------------- */
+
+function formatCityBtnsTxt(text) {
+    const lowerCaseCityTitle = text.toLowerCase();
+    const formattedCityTitle = lowerCaseCityTitle
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+        .join(' ');
+    return formattedCityTitle;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                      get weather conditions functions                      */
+/* -------------------------------------------------------------------------- */
 
 const apiKey = 'c68837c426737828b05c49ecb97695bd';
 
@@ -117,6 +132,10 @@ async function getWeather(latitude, longitude) {
     styleFutureWeather(currentWeatherData.daily);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                        get current location weather                        */
+/* -------------------------------------------------------------------------- */
+
 // Get the city name for the current location
 async function getCurrentLoc(latitude, longitude) {
     let currentCity = '';
@@ -147,13 +166,33 @@ getLocation();
 /*         save search data to the local storage and display as a list        */
 /* -------------------------------------------------------------------------- */
 
+/* --------------------- delete city from local storage --------------------- */
+
+function deleteCityFromSearch(e) {
+    // get the city name from the search results
+    const unformattedCityTitle = e.currentTarget.previousElementSibling.innerText;
+    // format the city name
+    const formattedCityTitle = formatCityBtnsTxt(unformattedCityTitle);
+    // Get the saved city search data
+    const citySearchData = JSON.parse(localStorage.getItem('citySearches'));
+    // Get the index of the city data that you wish to delete
+    const indexOfCity = citySearchData.findIndex((element) => element.city_name === formattedCityTitle);
+    // Splice it out of the array
+    citySearchData.splice(indexOfCity, 1);
+    // Mutate the data in local storage
+    localStorage.setItem('citySearches', JSON.stringify(citySearchData));
+
+    // Remove the city search list item from the search history list
+    e.currentTarget.parentElement.remove();
+}
+
 /* -------------------- Append the city to the list item -------------------- */
 function appendCityListItem(city) {
     const cityHTML = `
     <li class="collection-item">
         <button
             type="button"
-            class="waves-effect waves-light btn-small"
+            class="search-city-specific-btn waves-effect waves-light btn-small"
         >
             ${city}
         </button>
@@ -195,11 +234,22 @@ function getCitySearches() {
         citySearchData.forEach((el) => {
             appendCityListItem(el.city_name);
         });
+        // select city delete btns
+        const deleteCityBtns = $('.delete-city-btn');
+        // select city search btns
+        const searchCityBtns = $('.search-city-specific-btn');
+        deleteCityBtns.on('click', deleteCityFromSearch);
+        searchCityBtns.on('click', searchSpecificCity);
     }
 }
 
 getCitySearches();
-/* ---------------------- search for your specific city --------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                            search functionality                            */
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------- search for a specific city ----------------------- */
 
 // Geocoding API to get coordinates and
 async function getCityLatLong(cityName) {
@@ -229,3 +279,10 @@ function handleCitySearch(e) {
 }
 
 searchCityForm.on('submit', handleCitySearch);
+
+/* ------------- search specific cities using the search history ------------ */
+
+function searchSpecificCity(e) {
+    const formattedCityName = formatCityBtnsTxt(e.currentTarget.innerText);
+    getCityLatLong(formattedCityName);
+}
