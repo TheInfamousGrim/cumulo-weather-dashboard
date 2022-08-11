@@ -157,10 +157,6 @@ function getLocation() {
             getCurrentLoc(lat, long);
             getWeather(lat, long);
         });
-    } else {
-        const cityNotFoundModal = $('#cityNotFoundModal');
-        const instance = M.Modal.getInstance(cityNotFoundModal);
-        instance.open();
     }
 }
 
