@@ -158,7 +158,9 @@ function getLocation() {
             getWeather(lat, long);
         });
     } else {
-        console.log("couldn't get users position");
+        const cityNotFoundModal = $('#cityNotFoundModal');
+        const instance = M.Modal.getInstance(cityNotFoundModal);
+        instance.open();
     }
 }
 
@@ -284,8 +286,13 @@ async function getCityLatLong(cityName) {
     currentCityText.text(searchResults.name);
     // style all the weather cards
     getWeather(searchResults.lat, searchResults.long);
+    // format the city text
+    const formattedCityName = cityName
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+        .join(' ');
     // add the searched city to the search history
-    saveCitySearch(cityName);
+    saveCitySearch(formattedCityName);
 }
 
 function handleCitySearch(e) {
