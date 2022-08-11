@@ -65,7 +65,9 @@ Other things I learned:
 
 ![The weather dashboard application, with weather cards, a search form and a search history](/assets/readme-imgs/screenshot-cumulo-weather-dashboard.png)
 
-## Usage - [![Website Status](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://theinfamousgrim.github.io/cumulo-weather-dashboard/)
+## Usage
+
+[![Website Status](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://theinfamousgrim.github.io/cumulo-weather-dashboard/)
 
 If you would like to use this application please follow [this link](https://theinfamousgrim.github.io/cumulo-weather-dashboard/).
 
@@ -110,6 +112,8 @@ The technology used for the development of this app was:
 
 [MIT License](/LICENSE.md)
 
-## Feedback - ![Ask Me Anything](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
+## Feedback
+
+![Ask Me Anything](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
 
 Any feedback please email [George Fincher](mailto:finchergeorge1@gmail.com)
