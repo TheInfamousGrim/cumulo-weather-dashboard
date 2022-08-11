@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* -------------------------------------------------------------------------- */
-/*                             formating functions                            */
+/*                             formatting functions                           */
 /* -------------------------------------------------------------------------- */
 
 function formatCityBtnsTxt(text) {
@@ -218,6 +218,16 @@ function saveCitySearch(city) {
         citySearchData.push({ id, city_name: city });
         // Append the city to the search history list
         appendCityListItem(city);
+
+        // get the last delete btn added
+        const deleteBtns = $('.delete-city-btn');
+        const lastDeleteBtn = deleteBtns.last();
+        // get the last search btn added
+        const searchBtns = $('.search-city-specific-btn');
+        const lastSearchBtn = searchBtns.last();
+        // Run the event listener functions
+        lastDeleteBtn.on('click', deleteCityFromSearch);
+        lastSearchBtn.on('click', searchSpecificCity);
     }
 
     // Add the city to the local storage if it's not found
