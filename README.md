@@ -5,7 +5,7 @@ A weather dashboard to show the weather in your location as well as one that is 
 ## Table of Contents 📃
 
 1. [Description](#description)
-2. [Screenshots](#screenshots)
+2. [Screenshot](#screenshot)
 3. [Usage](#usage)
 4. [Technology](#technology)
 5. [Features](#features)
@@ -14,7 +14,7 @@ A weather dashboard to show the weather in your location as well as one that is 
 8. [License](#license)
 9. [Feedback](#feedback)
 
-## Description 📝
+## Description
 
 An application which can dynamically show the weather of the users current location (if they accept to share their information).
 
@@ -61,7 +61,7 @@ Other things I learned:
 - Override framework stylings to either fix things or add my own stylings
 - Manipulate data from a third party API
 
-## Screenshot 🖼️
+## Screenshot
 
 ![The weather dashboard application, with weather cards, a search form and a search history](/assets/readme-imgs/screenshot-cumulo-weather-dashboard.png)
 
@@ -71,7 +71,7 @@ If you would like to use this application please follow [this link](https://thei
 
 If you would like to develop this application further, feel free to fork the project or pull it for yourself.
 
-## Technology 🪛
+## Technology
 
 The technology used for the development of this app was:
 
@@ -90,13 +90,13 @@ The technology used for the development of this app was:
 - show a five days of forecasts
 - save your searched cities to the local storage and the search history card
 
-## Badges 📛
+## Badges
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
-## Credits 🙏
+## Credits
 
-Made with the help of:
+🙏 Made with the help of:
 
 - [University of Birmingham Coding Bootcamp](https://www.birmingham.ac.uk/postgraduate/courses/cpd/coding-boot-camp.aspx)
 - [Bootstrap](https://materializecss.com/)
@@ -104,7 +104,7 @@ Made with the help of:
 - [w3schools](https://www.w3schools.com/howto/howto_css_loader.asp)
 - [Favicon.io](https://favicon.io/)
 
-## License ©️
+## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
