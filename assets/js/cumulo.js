@@ -53,7 +53,7 @@ const apiKey = 'c68837c426737828b05c49ecb97695bd';
 
 // Style the current weather card to reflect the current data
 function styleTodaysWeather(icon, temp, wind, humidity, uvIndex) {
-    currentWeatherIcon.attr('src', `http://openweathermap.org/img/wn/${icon}@2x.png`);
+    currentWeatherIcon.attr('src', `https://openweathermap.org/img/wn/${icon}@2x.png`);
     // convert kelvin to rounded celsius
     const celsiusTemp = Math.round(temp - 273.15);
     currentTempText.text(celsiusTemp);
@@ -97,7 +97,7 @@ function styleFutureWeather(days) {
         const futureWeatherIconText = $(`.weather-icon-day-${cardCount}`);
         // set the icon from the api data
         const futureWeatherIcon = days[cardCount].weather[0].icon;
-        futureWeatherIconText.attr('src', `http://openweathermap.org/img/wn/${futureWeatherIcon}.png`);
+        futureWeatherIconText.attr('src', `https://openweathermap.org/img/wn/${futureWeatherIcon}.png`);
 
         // styling the temp of each card
         const cardTempText = $(`.future-temp-${cardCount}`);
@@ -139,7 +139,7 @@ async function getWeather(latitude, longitude) {
 // Get the city name for the current location
 async function getCurrentLoc(latitude, longitude) {
     let currentCity = '';
-    const weatherApiUrlLoc = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${apiKey}`;
+    const weatherApiUrlLoc = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${apiKey}`;
     const openWeatherLocResp = await fetch(weatherApiUrlLoc);
     const currentCityData = await openWeatherLocResp.json();
     currentCity = currentCityData[0].name;
