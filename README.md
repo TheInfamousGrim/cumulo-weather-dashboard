@@ -101,8 +101,9 @@ The technology used for the development of this app was:
 🙏 Made with the help of:
 
 - [University of Birmingham Coding Bootcamp](https://www.birmingham.ac.uk/postgraduate/courses/cpd/coding-boot-camp.aspx)
-- [Bootstrap](https://materializecss.com/)
+- [Materialize](https://materializecss.com/)
 - [jQuery](https://jquery.com/)
+- [day.js](https://day.js.org/en/)
 - [w3schools](https://www.w3schools.com/howto/howto_css_loader.asp)
 - [Favicon.io](https://favicon.io/)
 
