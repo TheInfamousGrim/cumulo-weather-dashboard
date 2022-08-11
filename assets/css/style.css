@@ -260,22 +260,29 @@ input[type="text"]:focus {
 }
 
 /* ------------------------ UV Index Severity classes ----------------------- */
+.todays-uv-index {
+  transition: all 0.5s;
+}
+
 .uv-index-high {
   padding: 0.5rem 0.5rem;
   background-color: var(--high-uv);
   border-radius: 50px;
+  transition: all 0.5s;
 }
 
 .uv-index-moderate {
   padding: 0.5rem 0.5rem;
   background-color: var(--moderate-uv);
   border-radius: 50px;
+  transition: all 0.5s;
 }
 
 .uv-index-low {
   padding: 0.5rem 0.5rem;
   background-color: var(--low-uv);
   border-radius: 50px;
+  transition: all 0.5s;
 }
 
 /* five day forecast title */

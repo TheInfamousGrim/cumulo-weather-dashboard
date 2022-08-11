@@ -65,10 +65,16 @@ function styleTodaysWeather(icon, temp, wind, humidity, uvIndex) {
     // Style the uv label depending on the severity of the uv index
     if (uvIndex < 3) {
         currentUVLabel.addClass('uv-index-low');
+        currentUVLabel.removeClass('uv-index-moderate');
+        currentUVLabel.removeClass('uv-index-high');
     } else if (uvIndex >= 3 && uvIndex < 6) {
         currentUVLabel.addClass('uv-index-moderate');
+        currentUVLabel.removeClass('uv-index-low');
+        currentUVLabel.removeClass('uv-index-high');
     } else {
         currentUVLabel.addClass('uv-index-high');
+        currentUVLabel.removeClass('uv-index-low');
+        currentUVLabel.removeClass('uv-index-moderate');
     }
     currentUVText.text(uvIndex);
 }

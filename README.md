@@ -1,8 +1,8 @@
-# Cumulo Weather Dashboard
+# Cumulo Weather Dashboard 🌡️☁️
 
-A weather dashboard to show weather in your location as well as one that is searched
+A weather dashboard to show the weather in your location as well as one that is searched
 
-## Table of Contents
+## Table of Contents 📃
 
 1. [Description](#description)
 2. [Screenshots](#screenshots)
@@ -14,27 +14,26 @@ A weather dashboard to show weather in your location as well as one that is sear
 8. [License](#license)
 9. [Feedback](#feedback)
 
-## Description
+## Description 📝
 
-A vanilla JavaScript application to schedule daily activities at work
+An application which can dynamically show the weather of the users current location (if they accept to share their information).
 
-There's only a single page, where the user is presented with rows of hour long time blocks.
-The Time blocks start from 09:00 and end at 17:00.
+The user can search for any city in the world in order to see what the weather conditions are like there
 
-The user can enter an activity by inputting text into the text area.
+When the weather is displayed they are shown a card showing todays weather, which shows:
 
-After inputting the text they then have the option to click the adjacent save button, saving the event
-to the local storage.
+- The city name
+- An icon showing the general weather conditions
+- The temperature
+-
 
-When the page is refreshed or reloaded the events for the current day will still be saved.
+### User Story 👤
 
-### User Story
+AS A traveler
+I WANT to see the weather outlook for multiple cities
+SO THAT I can plan a trip accordingly
 
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-
-### What did I Learn
+### What did I Learn 🏫
 
 For this project I kept strictly to the user requirements. I wanted to add more functionality, which I may do so in the future.
 
@@ -45,38 +44,39 @@ Specifically I learned:
 - how to manipulate elements using jQuery, whether that's selecting, appending or removing etc.
 - Quickly style elements using bootstrap to rapidly build sites
 
-## Screenshot
+## Screenshot 🖼️
 
 ![The weather dashboard application, with weather cards, a search form and a search history](/assets/readme-imgs/screenshot-cumulo-weather-dashboard.png)
 
 ## Usage
 
-If you would like to use this application please follow [this link](https://theinfamousgrim.github.io/personal-work-day-scheduler/)
+If you would like to use this application please follow [this link](https://theinfamousgrim.github.io/personal-work-day-scheduler/).
 
-If you would like to develope this application, feel free to fork the project or pull it for yourself
+If you would like to develop this application further, feel free to fork the project or pull it for yourself.
 
-## Technology
+## Technology 🪛
 
-The technology used for the development of this site was:
+The technology used for the development of this app was:
 
 - [github pages](https://pages.github.com/)
-- HTML
-- CSS
-- Material
-- JavaScript
-- [jQuery](https://jquery.com/) [![jQueyr](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)]
-- [Bootstrap](https://getbootstrap.com/)
-- [Font Awesome](https://fontawesome.com/)
+- [![HTML5](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)](https://html.com/)
+- ![CSS3](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+- [Materialize](https://materializecss.com/)
+- [![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://www.javascript.com/)
+- [![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)](https://jquery.com)
 
 ## Features
 
-- Add and save events to a daily schedule
+- search for the weather in any major city in the world
+- show the weather in your current location
+- show a five days of forecasts
+- save your searched cities to the local storage and the search history card
 
-## Badges
+## Badges 📛
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
-## Credits
+## Credits 🙏
 
 Made with the help of:
 
@@ -86,12 +86,12 @@ Made with the help of:
 - [w3schools](https://www.w3schools.com/howto/howto_css_loader.asp)
 - [Favicon.io](https://favicon.io/)
 
-## License
+## License ©️
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [MIT License](/LICENSE.md)
 
-## Feedback
+## Feedback 😀
 
 Any feedback please email [George Fincher](mailto:finchergeorge1@gmail.com)
