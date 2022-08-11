@@ -2,15 +2,9 @@
 :root {
   /* button colors and stylings */
   --delete-btn: #ee6e73;
-  --mikado-yellow: #ffc400;
-  --card-color: 37, 36, 34, 0.5;
-  --flicker-pink: #f72585;
   --byzantine: #b5179e;
-  --trypan-blue: #3a0ca3;
-  --persian-blue: #3f37c9;
-  --ultramarine-blue: #4361ee;
-  --dodger-blue: #4895ef;
-  --vivid-sky-blue: #4cc9f0;
+  /* cards color settings */
+  --card-color: 37, 36, 34, 0.5;
   --card-border-radius: 25px;
   /* UV Index Color Indicators */
   --low-uv: #9dc600;
@@ -83,6 +77,7 @@ small,
 button {
   background-color: var(--byzantine) !important;
   font-weight: 600;
+  border-radius: var(--card-border-radius) !important;
 }
 
 .card {
@@ -109,16 +104,18 @@ button {
   margin-top: 1rem;
   padding: 1rem 1rem;
   border-radius: 50px;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px rgba(0, 0, 0, 0.5);
   /* Animated Background */
   background: linear-gradient(
     270deg,
-    #ffc400,
-    #ff6d00,
-    #f72585,
-    #b5179e,
-    #7209b7,
-    #560bad,
-    #480ca8
+    rgba(255, 196, 0, 0.5),
+    rgba(255, 109, 0, 0.5),
+    rgba(247, 37, 133, 0.5),
+    rgba(181, 23, 158, 0.5),
+    rgba(114, 9, 183, 0.5),
+    rgba(86, 11, 173, 0.5),
+    rgba(72, 12, 168, 0.5)
   );
   background-size: 400% 400%;
   -webkit-animation: TitleBackgroundAnimation 30s ease infinite;
@@ -174,17 +171,38 @@ button {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                          search parameters column                          */
+/*                          search parameters card                            */
 /* -------------------------------------------------------------------------- */
 
 input[type="text"]:not(.browser-default) {
   color: #ccc5b9;
   border-bottom-color: #ccc5b9;
+  transition: all 0.5s;
 }
 
 input[type="text"]:focus {
   border-bottom: 1px solid var(--byzantine) !important;
   box-shadow: 0 1px 0 0 var(--byzantine) !important;
+}
+
+/* --------------------------- search city button --------------------------- */
+
+.search-city-btn {
+  transition: all 0.5s;
+}
+
+.search-city-btn:hover,
+.search-city-btn:focus {
+  font-size: 1.25rem;
+}
+
+.search-city-icon {
+  transition: all 0.5s;
+}
+
+.search-city-btn:hover .search-city-icon,
+.search-city-btn:focus .search-city-icon {
+  font-size: 2rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -198,6 +216,18 @@ input[type="text"]:focus {
   align-items: center;
 }
 
+/* --------------------------- search city buttons -------------------------- */
+
+.search-city-specific-btn {
+  transition: all 0.5s;
+}
+
+.search-city-specific-btn:hover,
+.search-city-specific-btn:focus {
+  font-size: 1rem;
+}
+
+/* ------------------------- delete button stylings ------------------------- */
 .delete-city-btn {
   background-color: var(--delete-btn) !important;
   transition: all 0.5s;
@@ -229,7 +259,7 @@ input[type="text"]:focus {
   justify-content: center !important;
 }
 
-/* UV Index Severity classes */
+/* ------------------------ UV Index Severity classes ----------------------- */
 .uv-index-high {
   padding: 0.5rem 0.5rem;
   background-color: var(--high-uv);
@@ -264,6 +294,10 @@ input[type="text"]:focus {
 .future-forecasts-cards-container {
   display: flex;
   justify-content: center;
+}
+
+.future-forecast-container {
+  width: 20% !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -304,7 +338,8 @@ input[type="text"]:focus {
   }
 
   .future-forecast-container {
-    margin-left: 0;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 
   .future-forecast-card {
