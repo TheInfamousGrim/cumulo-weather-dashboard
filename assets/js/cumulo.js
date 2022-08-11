@@ -269,9 +269,7 @@ async function getCityLatLong(cityName) {
     const latLongResponse = await fetch(geocodingAPIUrl);
     const latLongData = await latLongResponse.json();
     if (latLongData.length === 0) {
-        console.log('uh-oh');
         const cityNotFoundModal = $('#cityNotFoundModal');
-        console.log(cityNotFoundModal);
         const instance = M.Modal.getInstance(cityNotFoundModal);
         instance.open();
         return;
