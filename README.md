@@ -117,4 +117,4 @@ The technology used for the development of this app was:
 
 ![Ask Me Anything](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
 
-Any feedback please email [George Fincher](mailto:finchergeorge1@gmail.com)
+Any feedback please email [George Fincher](mailto:george@grimfunky.dev)
